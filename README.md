@@ -1,119 +1,133 @@
 #  Recon Scanner
 
-**CLI-based Website Reconnaissance & Vulnerability Scanner**.
-A powerful Python tool to perform automated reconnaissance and identify security misconfigurations.
-Recon Scanner is an automated cybersecurity reconnaissance tool that collects essential target information such as open ports, DNS records, WHOIS details, HTTP headers, and webpage metadata. It is designed to assist in footprinting and enumeration phases of security testing with a clean and easy-to-use CLI interface.
+CLI-based Website Reconnaissance & Vulnerability Scanner. A powerful Python tool to perform automated reconnaissance and identify security misconfigurations. Recon Scanner is an automated cybersecurity reconnaissance tool that collects essential target information such as open ports, DNS records, WHOIS details, HTTP headers, and webpage metadata. It is designed to assist in footprinting and enumeration phases of security testing with a clean and easy-to-use CLI interface.
 
 ---
 
 ##  Features
 
-*  Domain & WHOIS Information
+*  Domain Information
 *  DNS Enumeration
-*  SSL/TLS Certificate Analysis
-*  HTTP Headers Inspection
-*  Network Port Scanning 
-*  Vulnerability Detection Engine
-*  Severity-based Risk Classification
-*  Professional PDF Report Generation
+*  Open Port Scanning
+*  SSL Certificate Details
+*  WHOIS Lookup
+*  HTTP Headers Analysis
+*  Metadata Extraction
 
 ---
 
 ##  Installation
 
-###  Install via pip (Recommended)
-
-```bash
-pip install recon-scanner
-```
-
----
-
-###  Install from GitHub
+###  1. Clone the Repository
 
 ```bash
 git clone https://github.com/AvirajShinde/recon-scanner.git
 cd recon-scanner
-pip install .
+```
+
+---
+
+###  2. Create Virtual Environment (IMPORTANT)
+
+> Kali Linux blocks global pip installs (PEP 668), so use virtual environment
+
+```bash
+python3 -m venv venv
+```
+
+---
+
+###  3. Activate Virtual Environment
+
+```bash
+source venv/bin/activate
+```
+
+You should see:
+
+```bash
+(venv) user@kali
+```
+
+---
+
+###  4. Install Dependencies
+
+```bash
+pip install -r requirements.txt
 ```
 
 ---
 
 ##  Usage
 
-###  Run the tool
-
 ```bash
-recon-scanner example.com
-```
-
-OR (if interactive mode is enabled):
-
-```bash
-recon-scanner
+python recon-scanner.py
 ```
 
 ---
 
-##  Output
+##  Troubleshooting
 
-*  Reports are saved in: `/reports`
-*  Logs are saved in: `/logs`
+###  Error: externally-managed-environment
 
----
-
-##  Technologies Used
-
-* Python 3
-* Nmap
-* Requests
-* BeautifulSoup
-* DNSPython
-* ReportLab
+ Fix: Use virtual environment (recommended)
 
 ---
 
-##  Disclaimer
+###  Error: venv not found
 
-This tool is intended for:
+```bash
+sudo apt install python3-venv -y
+```
 
-*  Educational purposes
-*  Authorized security testing
+---
 
- Do NOT use this tool on systems without proper permission.
-Unauthorized scanning may be illegal.
+###  Permission issues
+
+Make sure you're not running from read-only directories like `/media/cdrom`
+
+---
+
+##  Requirements
+
+* Python 3.x
+* Linux (Kali recommended)
+* Internet connection
+
+---
+
+##  Project Structure
+
+```
+recon-scanner/
+│
+├── recon-scanner.py
+├── requirements.txt
+├── README.md
+└── setup.cfg
+```
 
 ---
 
 ##  Author
 
 **Aviraj Shinde**
-Cyber Security Analyst
-
----
-
-##  Contribute
-
-Contributions are welcome!
-
-1. Fork the repository
-2. Create a new branch
-3. Submit a Pull Request
-
----
-
-##  License
-
-This project is licensed under the MIT License.
+Cybersecurity | VAPT Enthusiast
 
 ---
 
 ##  Future Improvements
 
-* CVSS scoring integration
-* Web-based dashboard
-* API-based scanning
-* Docker support
-* Multi-target scanning
+* CLI support (`recon-scanner target.com`)
+* Report generation (PDF/HTML)
+* Multi-threaded scanning
+* API integration
+
+---
+
+##  Support
+
+If you like this project, give it a ⭐ on GitHub!
 
 ---
