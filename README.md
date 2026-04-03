@@ -119,8 +119,7 @@ Cybersecurity | VAPT Enthusiast
 
 ##  Future Improvements
 
-* CLI support (`recon-scanner target.com`)
-* Report generation (PDF/HTML)
+* GUI support 
 * Multi-threaded scanning
 * API integration
 
